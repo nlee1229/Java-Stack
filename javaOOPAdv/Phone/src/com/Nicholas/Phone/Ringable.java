@@ -3,10 +3,13 @@ package com.Nicholas.Phone;
 public interface Ringable {
 
 	default String ring() {
-		return();
+		String defaultRing = "Ringgggg";
+		return defaultRing;
 	}
 	
 	default String unlock() {
-		return();
+		String defaultUnlock = "iPhone unlocked, now what?";
+		return defaultUnlock;
 	}
 }
+	
