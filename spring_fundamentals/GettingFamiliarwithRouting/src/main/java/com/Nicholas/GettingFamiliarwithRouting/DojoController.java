@@ -19,9 +19,9 @@ public class DojoController {
 			return ("Burbank Dojo is located in Southern California.");
 		}
 		if (dojo.equals("san-jose")) {
-			return ("SJ dojo is the headquartes.");
+			return ("SJ dojo is the headquarters.");
 		}
-		return null;
+		return "Type in a CD location.";
 	}
 }
 	

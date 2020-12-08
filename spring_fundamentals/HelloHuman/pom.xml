@@ -8,14 +8,15 @@
 		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Nicholas.Strings</groupId>
-	<artifactId>Strings</artifactId>
+	<groupId>com.Nicholas.HelloHuman</groupId>
+	<artifactId>HelloHuman</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Strings</name>
-	<description>Coding Dojo String Assignment </description>
+	<packaging>war</packaging>
+	<name>HelloHuman</name>
+	<description>Coding Dojo Hello Human Assignment</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
@@ -24,6 +25,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

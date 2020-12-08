@@ -1,10 +1,10 @@
-package com.nicholas.strings;
+package com.Nicholas.HelloHuman;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StringsApplicationTests {
+class HelloHumanApplicationTests {
 
 	@Test
 	void contextLoads() {
