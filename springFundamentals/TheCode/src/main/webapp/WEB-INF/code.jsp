@@ -9,7 +9,7 @@
 	
 	<head>
 		<meta charset="UTF-8">
-		<title>Counter</title>
+		<title>Dojo Survey Index 2</title>
 	</head>
 	
 	<body>
