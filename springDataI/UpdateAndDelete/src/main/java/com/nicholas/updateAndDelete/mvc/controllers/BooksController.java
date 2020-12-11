@@ -50,5 +50,34 @@ import com.nicholas.updateAndDelete.mvc.services.BookService;
 	    	model.addAttribute("bookie", booky);
 	    	return "/books/show.jsp";
 	    }
-	}
+	    
+	    // get to the page to edit
+        @RequestMapping("/books/{id}/edit")
+        public String edit(@PathVariable("id") Long id, Model model) {
+            Book book = bookService.findBook(id);
+            model.addAttribute("book", book);
+            return "/books/edit.jsp";
+        }
+        
+        // actually edit and update to database
+        @RequestMapping(value="/books/{id}", method=RequestMethod.POST)
+        public String update(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+            if (result.hasErrors()) {
+                return "/books/edit.jsp";
+            } else {
+                bookService.updateBook(book);
+          
+                return "redirect:/books";
+            }
+	        }
+
+        @RequestMapping(value="/books/{id}", method=RequestMethod.DELETE)
+        public String destroy(@PathVariable("id") Long id) {
+            bookService.deleteBook(id);
+            return "redirect:/books";
+        }
+    }
+
+	    
+	
 

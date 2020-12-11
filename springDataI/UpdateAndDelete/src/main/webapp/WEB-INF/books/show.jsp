@@ -12,17 +12,17 @@
 	</head>
 	<body>
 		
-		<h1><c:out value="${book.title}"/></h1>
+		<h1><c:out value="${bookie.title}"/></h1>
 		
-		<p>Description: <c:out value="${book.description}"/></p>
+		<p>Description: <c:out value="${bookie.description}"/></p>
 		
-		<p>Language: <c:out value="${book.language}"/></p>
+		<p>Language: <c:out value="${bookie.language}"/></p>
 		
-		<p>Number of pages: <c:out value="${book.numberOfPages}"/></p>
+		<p>Number of pages: <c:out value="${bookie.numberOfPages}"/></p>
 		
-		<a href="/books/${book.id}/edit">Edit Book</a>
+		<a href="/books/${bookie.id}/edit">Edit Book</a>
 		
-		<form action="/books/${book.id}" method="post">
+		<form action="/books/${bookie.id}" method="post">
 		
 		    <input type="hidden" name="_method" value="delete">
 		    

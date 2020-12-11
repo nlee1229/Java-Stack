@@ -9,7 +9,7 @@
 	
 	<head>
 		<meta charset="UTF-8">
-		<title>Page</title>
+		<title>Home</title>
 	</head>
 	
 	<body>
