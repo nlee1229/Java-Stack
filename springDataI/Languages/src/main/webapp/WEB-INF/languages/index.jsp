@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+<%@ page isErrorPage="true" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>      
 
 <!DOCTYPE html>
 
@@ -9,12 +11,12 @@
 	
 	<head>
 		<meta charset="UTF-8">
-		<title>Dashboard</title>
+		<title>Home</title>
 	</head>
 	
 	<body>
 
-		<h1>All Books</h1>
+		<h1>All Languages</h1>
 		<table>
 		    <thead>
 		        <tr>
@@ -27,16 +29,20 @@
 		    <tbody>
 		        <c:forEach items="${languages}" var="language">
 		        <tr>
-		            <td><c:out value="${language.name}"/></td>
+		            <td><a href = "/languages/${language.id}">${language.name}</a></td>
 		            <td><c:out value="${language.creator}"/></td>
 		            <td><c:out value="${language.currentVersion}"/></td>
-		            <td><a href="languages/${language.id}/edit">Edit</a>|<a href="languages/${language.id}/delete"></a>Delete</td>
+		            <td><a href="languages/${language.id}/edit">Edit</a>|
+		     		<form:form action="/languages/${language.id}" method="post">
+		     		<input type="hidden" name="_method" value="delete">
+		  			<input type="submit" value="Delete">
+		     		</form:form></td>
 		        </tr>
 		        </c:forEach>
 		    </tbody>
 		</table>
 		
-		<form:form action="/languages/${language.id}/edit" method="post" modelAttribute="language">
+		<form:form action="/languages" method="post" modelAttribute="Language">
 		
 		    <input type="hidden" name="_method" value="post">
 		    

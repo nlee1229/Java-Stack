@@ -69,7 +69,7 @@ import com.nicholas.updateAndDelete.mvc.services.BookService;
           
                 return "redirect:/books";
             }
-	        }
+	    }
 
         @RequestMapping(value="/books/{id}", method=RequestMethod.DELETE)
         public String destroy(@PathVariable("id") Long id) {
