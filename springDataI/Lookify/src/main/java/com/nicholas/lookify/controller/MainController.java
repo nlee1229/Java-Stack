@@ -51,7 +51,7 @@ public class MainController {
 		return "show.jsp";
 	}
 	
-// -----------------------CREATING A SONG -------------------- //
+// ----------------------- CREATING A SONG -------------------- //
 	// RENDERING THE CREATE PAGE
 	@GetMapping("/songs/new")
 	public String create(@ModelAttribute("songObj") Song song) {
@@ -68,7 +68,7 @@ public class MainController {
 			return "redirect:/dashboard";
 		}
 	}
-// ----------------------DELETE ARTIST------------------------- //
+// ---------------------- DELETE ARTIST ------------------------- //
 	@GetMapping("/songs/{id}/delete")
 	public String delete(@PathVariable("id") Long id) {
 		songServ.deleteById(id);
@@ -83,7 +83,7 @@ public class MainController {
 		return "search.jsp";
 	}
 	
-	//-----------------FIND TOP 10 SONGS----------------------------//
+// --------------------------- FIND TOP 10 SONGS ---------------------------- //
 	
 	@GetMapping("/search/topTen")
 	public String searchTopTen(Model model) {

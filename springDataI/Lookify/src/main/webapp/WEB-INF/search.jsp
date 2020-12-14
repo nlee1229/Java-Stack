@@ -17,7 +17,7 @@
 	<a href="/dashboard">Dashboard</a>
 	
 	<h2>
-		Songs by artists: <c:out value= "${song.artist }" />
+		Songs by artists: <c:out value= "${songs.artist }" />
 	</h2>
 	
 	<form action="/search" method="get">

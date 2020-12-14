@@ -11,26 +11,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<a href="/dashboard">Dashboard</a>
-
 	<div class="container">
+	<h1>New Person</h1>
 	
-		<h1>Show Page for Song</h1>
-		<h3>
-			Title: <c:out value="${song.title }" />
-		</h3>
-		<h3>
-			Artist: <c:out value="${song.artist }" />
-		</h3>
-		<h3>
-			Rating: <c:out value="${song.rating }" />
-		</h3>
+ 	<form:form action="/persons/new" method="post" modelAttribute="personObj"> 
+	 	<p>
+	 		First Name: 
+	 		<form:input type="text" path="firstName" />
+	 		<form:errors path="firstName" />
+	 	</p>
+ 		<p>
+	 		Last Name: 
+	 		<form:input type="text" path="lastName" />
+	 		<form:errors path="lastName" />
+ 		</p>
 		
-		<a href="/songs/${song.id}/delete">Delete</a>	
+	
+	
+	
+	
+		<button type="submit">Create</button>
+	
+	</form:form>
 	</div>
-
-
 
 </body>
 </html>
