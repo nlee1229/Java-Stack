@@ -8,25 +8,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Show Info Page</title>
+<title>Insert title here</title>
+</head>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-</head>
-
 <body>
 
-	<div class="container">
+	<h1>New Dojo</h1>
 	
-		<h1><c:out value="${person.firstName}" /> <c:out value="${person.lastName}" /></h1>
-		
-		<h5>License Number: <c:out value="${person.license.number}"/></h5>
-		
-		<h5>State: <c:out value="${person.license.state}" /> </h5>
-		
-		<h5>Expiration Date: <c:out value="${person.license.expirationDate}" />  </h5>
-
-	</div>
+	<a href="/createDojo">Create a new Dojo</a> | <a href="/createNinja">Create a new Ninja</a>
 	
+	<hr>
+	
+	<c:forEach items="${dojos}" var="dojo">
+		<h3><a href="/dojos/${dojo.id}"><c:out value="${dojo.name}"></c:out></a></h3>
+		<!-- ninjas is coming from dojo.java models from the relationship -->
+		<c:forEach items="${dojo.ninjas}" var="nin">
+			<p><c:out value="${nin.firstName}"></c:out></p>
+		</c:forEach>
+	</c:forEach>
 </body>
 </html>
+
+
+
+
+
+

@@ -52,19 +52,20 @@ public class MainController {
 	}
 	
 	
-	// -------------------- CREATES A NEW PERSON IN THE DATABASE ---------------------- //
+	// -------------------- CREATES A NEW LICENSE IN THE DATABASE ---------------------- //
 	@PostMapping("/licenses/new")
 	public String createLicense(@Valid @ModelAttribute("licenseObj") License license, BindingResult results) {
 		if(results.hasErrors()) {
 			return "newLicense.jsp";
 		}
 		else {
+			license.setNumber(String.format("%06d", license.getPerson().getId()));
 			dlServ.createLicense(license);
 			return "redirect:/persons/" + license.getId();
 		}
 	}
 
-	// ------------------------RETRIEVING ONE PERSONS INFO -------------------------- //
+	// ------------------------ RENDERING ONE PERSONS INFO -------------------------- //
 		@GetMapping("/persons/{id}")
 		public String show(@PathVariable("id")Long id, Model model) {
 			
