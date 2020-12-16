@@ -41,7 +41,7 @@ public class LanguageService {
 
 	}
 	
-	// updates a language from LanuagesController.java
+	// updates a language from LanguagesController.java
 	public Language updateLanguage(Language lang) {
 	
 		langRepo.save(lang);

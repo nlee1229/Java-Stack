@@ -19,10 +19,10 @@ public class Language {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Size(min = 1, max = 20)
+	@Size(min = 2, max = 20)
 	private String name;
 	
-	@Size(min = 1, max = 20)
+	@Size(min = 2, max = 20)
 	private String creator;
 	
 	@Size(min = 1, max = 20)
@@ -88,6 +88,7 @@ public class Language {
     protected void onCreate(){
         this.createdAt = new Date();
     }
+    
     @PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();

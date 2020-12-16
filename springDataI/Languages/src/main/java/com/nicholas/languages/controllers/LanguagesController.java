@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -60,7 +61,7 @@ public class LanguagesController {
 	}
 	
 	// actually edit and update to database
-    @RequestMapping(value="/languages/{id}", method=RequestMethod.POST)
+    @PostMapping("/languages/{id}")
     public String update(@Valid @ModelAttribute("language") Language language, BindingResult result)
     {
         if (result.hasErrors()) {
