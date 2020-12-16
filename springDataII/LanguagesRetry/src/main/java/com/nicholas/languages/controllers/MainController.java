@@ -47,7 +47,7 @@ private final LanguageService langService;
 	public String show(Model model, @PathVariable ("id") Long id) {
 		Language langy = langService.findLanguage(id);
 		model.addAttribute("langie", langy);
-		System.out.println("Are we getting in here?");
+//		System.out.println("Are we getting in here?");
 		return "/show.jsp";
 	}
 	
