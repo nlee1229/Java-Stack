@@ -38,7 +38,7 @@ public class Message {
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name="event_id")
 	 private Event event;
-	 
+	 user
 	 public Message() {
 		 
 	 }
