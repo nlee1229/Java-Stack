@@ -27,7 +27,7 @@
 					<form:option value="${d}">
 						<c:out value="${d.name}"></c:out>
 					</form:option>
-				</c:forEach>
+				</c:forEach> 
 			</form:select>
 			<form:errors path="dojo"></form:errors>
 		</div>

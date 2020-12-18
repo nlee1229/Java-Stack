@@ -40,13 +40,13 @@ public class DojoService {
 	}
 	
 	//-------edit/update a dojo--------//
-	public Dojo updateDojo(Long id, String name) {
-		Dojo dojo = this.findDojoById(id);
+	public Dojo updateDojo(Long id, Dojo dojo) {
+		Dojo dojo1 = this.findDojoById(id);
 		
-		dojo.setName(name);
+		dojo1.setName(dojo.getName());
 		
-		dRepo.save(dojo);
-		return dojo;
+		dRepo.save(dojo1);
+		return dojo1;
 	}
 
 	

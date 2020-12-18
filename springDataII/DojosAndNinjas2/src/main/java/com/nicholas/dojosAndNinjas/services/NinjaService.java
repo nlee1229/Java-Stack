@@ -41,17 +41,17 @@ public class NinjaService {
 	}
 	
 	//-------edit/update a ninja--------//
-	public Ninja updateNinja(Long id, String firstName, String lastName, Integer age, Dojo dojo) {
-		Ninja ninja = this.findNinjaById(id);
+	public Ninja updateNinja(Long id, Ninja ninja) {
+		Ninja ninja1 = this.findNinjaById(id);
 		
-		ninja.setFirstName(firstName);
-		ninja.setLastName(lastName);
-		ninja.setAge(age);
+		ninja1.setFirstName(ninja.getFirstName());
+		ninja1.setLastName(ninja.getLastName());
+		ninja1.setAge(ninja.getAge());
 	
-		ninja.setDojo(dojo);
+		ninja1.setDojo(ninja.getDojo());
 		
-		nRepo.save(ninja);
-		return ninja;
+		nRepo.save(ninja1);
+		return ninja1;
 	}
 
 	

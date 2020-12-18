@@ -26,7 +26,7 @@ private final LanguageService langService;
 	
 	@RequestMapping("/languages")
 	public String index(Model model, @ModelAttribute("Language")Language language) {
-		List<Language> languages = langService.allLanguages();
+		List<Language> languages = langService.allLanguages();	
 		model.addAttribute("languages", languages);
 		return "/dashboard.jsp";
 	}
